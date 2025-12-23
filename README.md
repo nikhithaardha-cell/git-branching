@@ -148,6 +148,22 @@ The branches (main and bugFix) stay where they were and do not move.
 This state is called detached HEAD.
 
 It helps us understand how Git can look at any old commit without changing branch history.
+# 2.Relative Refs (^)
+Relative refs (^) in Git are a way to refer to commits relative to another commit, usually the current HEAD. The caret symbol (^) means “the parent commit” of a given commit. For example, HEAD^ refers to the commit immediately before the current one, and HEAD^^ refers to the grandparent commit (two commits before). Relative refs are especially useful for navigating commit history, checking out previous states of the project, or performing operations like reset, checkout, or rebase without needing to know exact commit hashes. They make working with Git history easier and more readable by allowing developers to move backward through commits using simple notation.
+<img width="1905" height="866" alt="image" src="https://github.com/user-attachments/assets/cf2934e8-f821-4d04-aab2-7af9fc80b79e" />
+# Commands Executed
+``` bash
+git checkout bugFix
+```
+```
+git checkout C3
+```
+n these screenshot Git checkout bugFix moves you to the bugFix branch.
+
+Git checkout C3 moves HEAD to commit C3, not to a branch, so this is called detached HEAD.
+
+The ^ symbol means go to the previous commit.
+
 
 
 
