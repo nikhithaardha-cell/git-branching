@@ -24,3 +24,25 @@ The (main*) label shows the current branch, and it points to the latest commit (
 Every time git commit is used, a new commit is added and the main branch moves forward.
 
 This helps us understand how Git keeps track of changes.
+
+# 2.Introduction to Git Branching
+What is Git Branch?
+A Git branch is a lightweight pointer to a commit that allows you to work on code independently without affecting the main branch.
+<img width="1910" height="875" alt="image" src="https://github.com/user-attachments/assets/f6570752-18df-477a-9672-2ac5e41ead57" />
+# Commands Executed
+``` bash
+
+git branch bugfix
+```
+```
+git checkout bugfix
+```
+his screenshot shows how to create and switch to a new branch in Git using Learn Git Branching.
+
+The commits C0 and C1 are displayed, with C1 being the latest commit.
+
+A new branch named bugfix has been created from commit C1 using git branch bugfix, and it has been checked out using git checkout bugfix.
+
+The * symbol next to bugfix indicates that HEAD is currently on this branch.
+
+The main branch still points to commit C1, but the active branch is now bugfix.
