@@ -163,6 +163,50 @@ n these screenshot Git checkout bugFix moves you to the bugFix branch.
 Git checkout C3 moves HEAD to commit C3, not to a branch, so this is called detached HEAD.
 
 The ^ symbol means go to the previous commit.
+# 3.Relative Refs #2 (~)
+Relative refs () in Git are used to refer to a commit that is a certain number of steps before another commit, usually starting from HEAD. The tilde symbol () followed by a number indicates how many commits to go back in a straight line. For example, HEAD1 refers to the immediate previous commit, HEAD2 refers to two commits before, and HEAD~3 refers to three commits before the current commit. Relative refs using ~ are especially useful for quickly navigating commit history and performing Git operations like checkout, reset, or rebase without needing to remember long commit hashes.
+<img width="1913" height="879" alt="image" src="https://github.com/user-attachments/assets/2019a680-301e-4442-904b-e8da294f5c8c" />
+# Commands Executed
+``` bash
+git checkout C1
+```
+```
+git branch -f bugFix C0
+```
+```
+git branch -f main C6
+```
+These screenshot shows Git checkout C1 moves you directly to commit C1.
+
+Git branch -f bugFix C0 forces the bugFix branch to point to commit C0.
+
+Git branch -f main C6 forces the main branch to point to commit C6.
+# 4.Reversing Changes in Git
+Reversing changes in Git refers to the process of undoing or rolling back modifications made to files or commits in a repository. Git provides several commands to reverse changes depending on the situation—for example, discarding uncommitted changes, undoing a commit, or reverting a specific commit from history. Commands like git checkout or git restore can be used to discard changes in the working directory, while git reset is used to move the current branch pointer to a previous commit, optionally keeping or removing changes. For already shared commits, git revert is preferred because it safely creates a new commit that reverses the effects of an earlier one without rewriting history. Overall, reversing changes in Git allows developers to correct mistakes, experiment freely, and maintain a clean and reliable project history.
+<img width="1918" height="870" alt="image" src="https://github.com/user-attachments/assets/bf0344e3-a27d-4487-8b7f-599c7a2cc9f8" />
+# Commands Executed
+``` bash
+git checkout local
+```
+```
+git reset --hard C1
+```
+```
+git checkout pushed
+```
+```
+
+git revert pushed
+```
+Git checkout local moves you to the local branch.
+
+Git reset --hard C1 moves the branch back to commit C1 and removes later changes.
+
+Git checkout pushed switches you to the pushed branch.
+
+Git revert pushed creates a new commit that undoes the changes made in the pushed commit.
+
+
 
 
 
