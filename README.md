@@ -81,3 +81,50 @@ The label main* indicates that the main branch is currently checked out, with th
 
 The curved lines in the diagram visually represent the divergence of the two branches and their integration through a merge.
 
+# 4.Introduction to Rebase
+What is Git Rebase?
+
+Git rebase is a Git operation used to integrate changes from one branch into another by moving or replaying commits on top of a new base commit. Instead of creating a merge commit like Git merge, rebase rewrites the commit history so that the branch appears as if it was created from the latest commit of the target branch. This results in a cleaner, linear project history that is easier to read and understand. During a rebase, Git temporarily removes the commits from the current branch, updates the branch to the latest version of the target branch, and then reapplies the removed commits one by one. Git rebase is commonly used for local branches to keep the commit history tidy, but it should be avoided on shared or public branches because it rewrites history.
+<img width="1904" height="875" alt="image" src="https://github.com/user-attachments/assets/6ad8cc54-2c31-4989-b159-6d2f3800122f" />
+ # Commands Executed
+ ```bash
+git branch bugfix
+```
+```
+git checkout bugfix
+```
+```
+git commit
+```
+```
+git checkout main
+```
+```
+git commit
+```
+```
+git checkout bugfix
+```
+```
+git rebase main
+```
+The main branch has its own commits, and the bugFix* label shows the branch where the bug fix work is done.
+
+First, commits are made separately on the main and bugFix branches.
+
+When the command git rebase main is used on the bugFix branch, Git takes the bug fix commit and places it on top of the latest commit of the main branch.
+
+After rebasing, both branches contain the same changes, and the commit history becomes clean and straight.
+
+This helps us understand how Git can organize commits neatly while keeping all changes.
+
+The commit history begins linearly from C0 to C1, after which it splits into two branches.
+
+The main branch points to commit C3, while the bugfix* branch is currently checked out and points to C2, as indicated by the * symbol showing that HEAD is on the bugfix branch.
+
+The diagram shows that the bugfix commit has been moved and reapplied on top of the latest commit of the main branch, resulting in a straight, linear history.
+
+The renaming of the commit to C2′ visually represents that the commit was recreated during the rebase process.
+
+
+
