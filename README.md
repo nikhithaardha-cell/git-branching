@@ -125,6 +125,31 @@ The main branch points to commit C3, while the bugfix* branch is currently check
 The diagram shows that the bugfix commit has been moved and reapplied on top of the latest commit of the main branch, resulting in a straight, linear history.
 
 The renaming of the commit to C2′ visually represents that the commit was recreated during the rebase process.
+# Level -2 [Ramping Up]
+# 1.Detach yo' HEAD
+Detach yo’ HEAD in Git refers to a situation called the detached HEAD state, where the HEAD pointer is no longer attached to a branch but instead points directly to a specific commit. Normally, HEAD points to the latest commit of a branch, but when you check out a particular commit, tag, or past version, Git detaches HEAD from the branch. In this state, you can view, test, or even make changes and create new commits, but those commits are not associated with any branch and may be lost if you switch to another branch without saving them. To preserve work done in a detached HEAD state, you must create a new branch. This state is mainly used for exploring project history, debugging older versions, or testing previous commits without affecting the main branch.
+<img width="1909" height="875" alt="image" src="https://github.com/user-attachments/assets/75e00ca2-03b0-43fb-a2d4-c9a124f5bbdd" />
+# Command Executed
+``` bash
+git checkout C4
+```
+This screenshot shows what happens when HEAD is detached in Git.
+
+The commits (C0, C1, C2, C3, C4) show the history of the project.
+
+At first, HEAD is normally connected to a branch like main or bugFix.
+
+When the command git checkout C4 is used, Git moves HEAD directly to commit C4.
+
+Now, HEAD is not pointing to any branch, it is pointing only to that commit.
+
+The branches (main and bugFix) stay where they were and do not move.
+
+This state is called detached HEAD.
+
+It helps us understand how Git can look at any old commit without changing branch history.
+
+
 
 
 
